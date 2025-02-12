@@ -1,0 +1,131 @@
+.authContainer {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.glassEffect {
+    background: rgba(10, 255, 212, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 450px;
+    border: 1px solid var(--couleur-secondaire);
+    box-shadow: 0 0 20px rgba(10, 255, 212, 0.1);
+}
+
+.title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    color: var(--couleur-secondaire);
+    text-align: center;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+}
+
+.authForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.inputGroup label {
+    font-family: 'Abel', sans-serif;
+    color: var(--couleur-secondaire);
+    font-size: 0.9rem;
+}
+
+.inputGroup input {
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--couleur-secondaire);
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.inputGroup input:focus {
+    outline: none;
+    border-color: var(--couleur-principale);
+    box-shadow: 0 0 10px rgba(0, 36, 255, 0.3);
+}
+
+.authButton {
+    background: var(--couleur-principale);
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Abel', sans-serif;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.authButton:hover {
+    background: var(--couleur-secondaire);
+    color: var(--couleur-quaternaire);
+}
+
+.switchAuth {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: var(--couleur-tertiaire);
+}
+
+.link {
+    color: var(--couleur-secondaire);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.link:hover {
+    color: var(--couleur-principale);
+}
+
+.error {
+    color: #ff4444;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.success {
+    color: var(--couleur-secondaire);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.passwordStrength {
+    display: flex;
+    gap: 5px;
+    margin-top: 0.5rem;
+}
+
+.strengthBar {
+    height: 4px;
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.strengthBar.active {
+    background: var(--couleur-secondaire);
+}
+
+.confirmText {
+    text-align: center;
+    margin: 1.5rem 0;
+    color: var(--couleur-tertiaire);
+}

@@ -1,0 +1,53 @@
+.accroche {
+    position: relative;
+    margin-top: 220px;
+    padding: 0 50px;
+}
+
+.entete {
+    width: 850px;
+    height: 150px;
+    font-size: 48px;
+    font-family: "Bebas Neue", sans-serif;
+    margin-left: 100px;
+    color: var(--couleur-cinquieme);
+}
+
+.logoEntete {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    right: 80px;
+    top: 140px;
+}
+
+.more {
+    background-color: var(--couleur-secondaire);
+    padding: 8px 15px;
+    border-radius: 4px;
+    color: var(--couleur-cinquieme);
+    font-family: "Abel", sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    margin-left: 150px;
+    text-decoration: none;
+}
+
+@media (max-width: 420px) {
+    .logoEntete {
+        display: none;
+    }
+
+    .entete {
+        margin-top: 100px;
+        width: auto;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .more {
+        margin-left: 20px;
+        top: 150px;
+        position: relative;
+    }
+}

@@ -1,0 +1,204 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: var(--couleur-quaternaire);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logoContainer {
+    flex: 1;
+}
+
+.homeImage {
+    object-fit: contain;
+    width: 100px;
+    height: 70px;
+}
+
+.navLinks {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.link {
+    color: var(--couleur-cinquieme);
+    text-decoration: none;
+    font-family: 'Abel', sans-serif;
+    font-size: 1.1rem;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+}
+
+.link:hover {
+    color: var(--couleur-secondaire);
+}
+
+.link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--couleur-secondaire);
+    transition: width 0.3s ease;
+}
+
+.link:hover::after {
+    width: 100%;
+}
+
+/* User Menu Styles */
+.userMenu {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.avatarContainer {
+    position: relative;
+    cursor: pointer;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: linear-gradient(135deg,
+    rgba(0, 36, 255, 0.2),
+    rgba(10, 255, 212, 0.2)
+    );
+    border: 1px solid var(--couleur-secondaire);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--couleur-cinquieme);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(10, 255, 212, 0.1);
+}
+
+.avatar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(10, 255, 212, 0.2);
+    border-color: var(--couleur-principale);
+}
+
+
+.logoutButton {
+    color: #ff4757;
+}
+
+.logoutButton svg {
+    color: #ff4757;
+}
+
+.logoutButton:hover {
+    background: rgba(255, 71, 87, 0.1);
+}
+
+.connexionButton {
+    background-color: var(--couleur-principale);
+    color: var(--couleur-cinquieme);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-family: 'Abel', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.connexionButton:hover {
+    background-color: var(--couleur-secondaire);
+    color: var(--couleur-quaternaire);
+}
+
+/* Menu Burger (Mobile) */
+.burgerMenu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.burgerLine {
+    width: 25px;
+    height: 3px;
+    background-color: var(--couleur-cinquieme);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .burgerMenu {
+        display: flex;
+    }
+
+    .navLinks {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--couleur-quaternaire);
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 0;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .navLinks.open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .dropdown {
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        border-radius: 12px 12px 0 0;
+        animation: slideUp 0.3s ease-out;
+    }
+
+    @keyframes slideUp {
+        from {
+            transform: translateY(100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+
+    .connexionButton {
+        margin-top: 1rem;
+    }
+}
