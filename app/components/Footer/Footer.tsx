@@ -2,10 +2,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Footer.module.css';
-import logo from '@/public/Images/White_log.png';
-import TwitterIcon from '@/public/Images/x-social-media-round-icon.svg';
-import LinkedinIcon from '@/public/Images/linkedin-svgrepo-com.svg';
-import InstagramIcon from '@/public/Images/instagram.svg';
+import logo from '@/Images/White_log.png';
+import TwitterIcon from '@/Images/x-social-media-round-icon.svg';
+import LinkedinIcon from '@/Images/linkedin-svgrepo-com.svg';
+import InstagramIcon from '@/Images/instagram.svg';
 
 const Footer = () => {
     return (
