@@ -1,77 +1,167 @@
 .section {
-    margin-top: 150px;
+    margin-top: 20px;
     padding: 50px 20px;
     text-align: center;
+    position: relative;
 }
 
 .sectionTitle {
     font-size: 48px;
     font-family: "Bebas Neue", sans-serif;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
     color: var(--couleur-cinquieme);
     text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+}
+
+.sectionTitle::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--couleur-secondaire);
+    border-radius: 2px;
 }
 
 .cardContainer {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .card {
-    background-color: var(--couleur-cinquieme);
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
     overflow: hidden;
-    width: calc(25% - 20px);
-    text-align: left;
-    transition: transform 0.3s ease;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    min-height: 300px; /* Set minimum height for consistency */
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.05) 0%,
+            rgba(255, 255, 255, 0) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.cardHeader {
+    padding: 20px 20px 10px;
+    position: relative;
 }
 
 .etiquette {
-    font-size: 12px;
-    background-color: var(--couleur-secondaire);
-    color: var(--couleur-cinquieme);
-    padding: 5px 10px;
-    border-radius: 5px;
-    margin: 15px;
-    width: fit-content;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    background: var(--couleur-secondaire);
+    color: var(--couleur-quaternaire);
+    letter-spacing: 0.5px;
+}
+
+.etiquette svg {
+    width: 16px;
+    height: 16px;
 }
 
 .cardTitle {
-    font-size: 1.5rem;
-    margin: 15px;
-    color: var(--couleur-quaternaire);
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--couleur-cinquieme);
+    line-height: 1.3;
 }
 
 .cardText {
-    font-size: 1rem;
-    margin: 0 15px 15px;
-    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 25px;
+    padding: 0 20px;
+    flex-grow: 1; /* Allow text to grow and push footer down */
+}
+
+.cardFooter {
+    padding: 0 20px 20px;
+    margin-top: auto; /* Push footer to bottom */
 }
 
 .cardLink {
     display: inline-block;
-    margin: 15px;
-    padding: 10px 15px;
-    background-color: var(--couleur-secondaire);
+    width: 100%;
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.1);
     color: var(--couleur-cinquieme);
-    border-radius: 5px;
     text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-@media (max-width: 420px) {
+.cardLink:hover {
+    background: var(--couleur-secondaire);
+    color: var(--couleur-quaternaire);
+    border-color: transparent;
+}
+
+@media (max-width: 768px) {
     .cardContainer {
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        padding: 10px;
+    }
+
+    .sectionTitle {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: 30px 15px;
     }
 
     .card {
-        width: 90%;
+        margin: 0 10px;
+    }
+
+    .cardTitle {
+        font-size: 20px;
     }
 }
