@@ -43,7 +43,7 @@ const Navbar = () => {
                 <Link href="/lessons" className={styles.link}>
                     Lessons
                 </Link>
-                <Link href="/partenaires" className={styles.link}>
+                <Link href="/Partners" className={styles.link}>
                     Partenaires
                 </Link>
                 <Link href="/contact" className={styles.link}>

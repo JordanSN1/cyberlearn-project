@@ -35,7 +35,7 @@ export default function SignIn() {
             <div className={styles.glassEffect}>
                 <h2 className={styles.title}>Access CyberLearn Terminal</h2>
                 {error && <p className={styles.error}>{error}</p>}
-                {authError && <p className={styles.error}>{authError.message}</p>}
+                {authError && <p className={styles.error}>Incorrect email or password</p>}
 
                 <form onSubmit={handleSubmit} className={styles.authForm}>
                     <div className={styles.inputGroup}>
