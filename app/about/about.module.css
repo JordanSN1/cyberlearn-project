@@ -1,0 +1,235 @@
+/* Styles pour la page À propos utilisant les variables globales */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Section Hero */
+.hero {
+  background-color: rgba(3, 2, 25, 0.7);
+  border-radius: 10px;
+  padding: 4rem 2rem;
+  margin-bottom: 4rem;
+  text-align: center;
+  border: 1px solid var(--couleur-principale);
+  box-shadow: 0 4px 15px rgba(0, 36, 255, 0.3);
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--couleur-secondaire);
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
+}
+
+.heroText {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--couleur-tertiaire);
+  font-family: 'Abel', sans-serif;
+}
+
+/* Section Valeurs */
+.values {
+  margin-bottom: 4rem;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--couleur-cinquieme);
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.valueCard {
+  background-color: rgba(3, 2, 25, 0.7);
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 36, 255, 0.3);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--couleur-principale);
+}
+
+.valueCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(10, 255, 212, 0.2);
+  border-color: var(--couleur-secondaire);
+}
+
+.valueIcon {
+  color: var(--couleur-secondaire);
+  margin-bottom: 1rem;
+  width: 48px;
+  height: 48px;
+}
+
+.valueTitle {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--couleur-cinquieme);
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.valueText {
+  color: var(--couleur-tertiaire);
+  line-height: 1.5;
+  font-family: 'Abel', sans-serif;
+}
+
+/* Section Histoire */
+.story {
+  margin-bottom: 4rem;
+}
+
+.storyContent {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.storyText p {
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--couleur-tertiaire);
+  font-family: 'Abel', sans-serif;
+}
+
+.storyImageContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.storyImagePlaceholder {
+  width: 300px;
+  height: 200px;
+  background-color: var(--couleur-principale);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--couleur-cinquieme);
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: 'Bebas Neue', sans-serif;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 36, 255, 0.3);
+}
+
+.storyImagePlaceholder:hover {
+  background-color: var(--couleur-secondaire);
+  color: var(--couleur-quaternaire);
+  transform: translateY(-5px);
+}
+
+/* Section Équipe */
+.team {
+  margin-bottom: 2rem;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.teamCard {
+  background-color: rgba(3, 2, 25, 0.7);
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 36, 255, 0.3);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--couleur-principale);
+}
+
+.teamCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(10, 255, 212, 0.2);
+  border-color: var(--couleur-secondaire);
+}
+
+.memberImageContainer {
+  margin-bottom: 1.5rem;
+}
+
+.memberImagePlaceholder {
+  width: 120px;
+  height: 120px;
+  background-color: var(--couleur-principale);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 2.5rem;
+  color: var(--couleur-cinquieme);
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.teamCard:hover .memberImagePlaceholder {
+  background-color: var(--couleur-secondaire);
+  color: var(--couleur-quaternaire);
+}
+
+.memberName {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--couleur-cinquieme);
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.memberRole {
+  font-size: 0.9rem;
+  color: var(--couleur-secondaire);
+  margin-bottom: 1rem;
+  font-weight: 500;
+  font-family: 'Abel', sans-serif;
+}
+
+.memberBio {
+  color: var(--couleur-tertiaire);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-family: 'Abel', sans-serif;
+}
+
+@media (max-width: 768px) {
+  .storyContent {
+    grid-template-columns: 1fr;
+  }
+  
+  .storyImageContainer {
+    order: -1;
+    margin-bottom: 2rem;
+  }
+  
+  .heroTitle, .sectionTitle {
+    font-size: 1.8rem;
+  }
+  
+  .hero {
+    padding: 3rem 1.5rem;
+  }
+} 

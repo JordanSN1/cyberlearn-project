@@ -1,0 +1,506 @@
+/* Styles pour la page de détail des leçons */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Header */
+.header {
+  margin-bottom: 2rem;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--couleur-quaternaire);
+  color: var(--couleur-cinquieme);
+  border: 1px solid var(--couleur-principale);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Abel', sans-serif;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.backButton:hover {
+  background-color: var(--couleur-principale);
+  transform: translateY(-3px);
+}
+
+.lessonInfo {
+  background-color: rgba(3, 2, 25, 0.7);
+  border-radius: 10px;
+  padding: 2rem;
+  border: 1px solid var(--couleur-principale);
+  box-shadow: 0 4px 15px rgba(0, 36, 255, 0.3);
+}
+
+.categoryTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--couleur-secondaire);
+  font-family: 'Abel', sans-serif;
+  background-color: rgba(0, 36, 255, 0.2);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--couleur-cinquieme);
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
+}
+
+.description {
+  color: var(--couleur-tertiaire);
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  font-family: 'Abel', sans-serif;
+}
+
+.tagsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background-color: rgba(0, 36, 255, 0.3);
+  color: var(--couleur-cinquieme);
+  font-size: 0.8rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  border: 1px solid var(--couleur-principale);
+  transition: all 0.3s ease;
+}
+
+.tag:hover {
+  background-color: var(--couleur-principale);
+  transform: translateY(-2px);
+}
+
+/* Content Container */
+.contentContainer {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 2rem;
+  min-height: 600px;
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: rgba(3, 2, 25, 0.7);
+  border-radius: 10px;
+  padding: 1.5rem;
+  border: 1px solid var(--couleur-principale);
+  box-shadow: 0 4px 15px rgba(0, 36, 255, 0.3);
+  height: fit-content;
+}
+
+.sectionLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sectionLink {
+  text-align: left;
+  padding: 0.8rem 1rem;
+  background-color: var(--couleur-quaternaire);
+  color: var(--couleur-cinquieme);
+  border: 1px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Abel', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.sectionLink:hover {
+  background-color: rgba(0, 36, 255, 0.3);
+  border-color: var(--couleur-principale);
+}
+
+.sectionLink.active {
+  background-color: var(--couleur-principale);
+  border-color: var(--couleur-secondaire);
+  font-weight: bold;
+}
+
+.quizLink {
+  margin-top: 1rem;
+  background-color: rgba(10, 255, 212, 0.2);
+  border-color: var(--couleur-secondaire);
+}
+
+.quizLink:hover, .quizLink.active {
+  background-color: var(--couleur-secondaire);
+  color: var(--couleur-quaternaire);
+}
+
+/* Main Content */
+.mainContent {
+  background-color: rgba(3, 2, 25, 0.7);
+  border-radius: 10px;
+  padding: 2rem;
+  border: 1px solid var(--couleur-principale);
+  box-shadow: 0 4px 15px rgba(0, 36, 255, 0.3);
+}
+
+/* Section Content */
+.sectionContent {
+  color: var(--couleur-cinquieme);
+}
+
+.sectionTitle {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--couleur-secondaire);
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--couleur-principale);
+  padding-bottom: 0.5rem;
+}
+
+.sectionText {
+  font-family: 'Abel', sans-serif;
+  line-height: 1.6;
+  color: var(--couleur-tertiaire);
+  margin-bottom: 2rem;
+}
+
+.sectionText h3 {
+  color: var(--couleur-cinquieme);
+  margin: 1.5rem 0 0.75rem;
+  font-size: 1.3rem;
+}
+
+.sectionText p {
+  margin-bottom: 1rem;
+}
+
+.sectionText ul, .sectionText ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.sectionText li {
+  margin-bottom: 0.5rem;
+}
+
+.sectionText code {
+  background-color: var(--couleur-quaternaire);
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+.sectionText pre {
+  background-color: var(--couleur-quaternaire);
+  padding: 1rem;
+  border-radius: 5px;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+  border-left: 3px solid var(--couleur-secondaire);
+}
+
+.navigationButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.navButton {
+  background-color: var(--couleur-principale);
+  color: var(--couleur-cinquieme);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Abel', sans-serif;
+  transition: all 0.3s ease;
+  flex: 1;
+}
+
+.navButton:hover:not(:disabled) {
+  background-color: var(--couleur-secondaire);
+  color: var(--couleur-quaternaire);
+  transform: translateY(-3px);
+}
+
+.navButton:disabled {
+  background-color: rgba(0, 36, 255, 0.2);
+  cursor: not-allowed;
+}
+
+.quizButton {
+  background-color: var(--couleur-secondaire);
+  color: var(--couleur-quaternaire);
+  font-weight: bold;
+}
+
+.quizButton:hover {
+  background-color: rgba(10, 255, 212, 0.8);
+}
+
+/* Quiz Container */
+.quizContainer {
+  color: var(--couleur-cinquieme);
+}
+
+.quizTitle {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--couleur-secondaire);
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.questionCard {
+  background-color: rgba(3, 2, 25, 0.9);
+  border-radius: 10px;
+  padding: 2rem;
+  border: 1px solid var(--couleur-principale);
+  margin-bottom: 2rem;
+}
+
+.questionText {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: var(--couleur-cinquieme);
+  font-weight: bold;
+}
+
+.answerOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.answerOption {
+  background-color: var(--couleur-quaternaire);
+  color: var(--couleur-cinquieme);
+  border: 1px solid var(--couleur-principale);
+  padding: 1rem;
+  border-radius: 5px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Abel', sans-serif;
+}
+
+.answerOption:hover:not(:disabled) {
+  background-color: rgba(0, 36, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.answerOption.selected {
+  background-color: var(--couleur-principale);
+  border-color: var(--couleur-secondaire);
+}
+
+.answerOption.correct {
+  background-color: rgba(46, 204, 113, 0.3);
+  border-color: #2ecc71;
+}
+
+.answerOption.incorrect {
+  background-color: rgba(231, 76, 60, 0.3);
+  border-color: #e74c3c;
+}
+
+.explanation {
+  background-color: rgba(10, 255, 212, 0.1);
+  border: 1px solid var(--couleur-secondaire);
+  border-radius: 5px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.explanation h3 {
+  color: var(--couleur-secondaire);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.quizActions {
+  display: flex;
+  justify-content: center;
+}
+
+.checkButton, .nextButton {
+  background-color: var(--couleur-principale);
+  color: var(--couleur-cinquieme);
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Abel', sans-serif;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.checkButton:hover:not(:disabled), .nextButton:hover {
+  background-color: var(--couleur-secondaire);
+  color: var(--couleur-quaternaire);
+  transform: translateY(-3px);
+}
+
+.checkButton:disabled {
+  background-color: rgba(0, 36, 255, 0.2);
+  cursor: not-allowed;
+}
+
+.nextButton {
+  background-color: var(--couleur-secondaire);
+  color: var(--couleur-quaternaire);
+}
+
+/* Quiz Results */
+.quizResults {
+  text-align: center;
+}
+
+.resultsTitle {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--couleur-secondaire);
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.scoreCard {
+  background-color: rgba(3, 2, 25, 0.9);
+  border-radius: 10px;
+  padding: 2rem;
+  border: 1px solid var(--couleur-principale);
+  margin-bottom: 2rem;
+}
+
+.scoreText {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--couleur-cinquieme);
+}
+
+.score {
+  font-weight: bold;
+  color: var(--couleur-secondaire);
+}
+
+.scorePercentage {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--couleur-secondaire);
+  margin: 1rem 0;
+}
+
+.congratsMessage {
+  color: #2ecc71;
+  font-size: 1.1rem;
+}
+
+.goodMessage {
+  color: #f39c12;
+  font-size: 1.1rem;
+}
+
+.tryAgainMessage {
+  color: #e74c3c;
+  font-size: 1.1rem;
+}
+
+.resultActions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.retryButton, .backToLessonButton {
+  background-color: var(--couleur-principale);
+  color: var(--couleur-cinquieme);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Abel', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.retryButton:hover, .backToLessonButton:hover {
+  background-color: var(--couleur-secondaire);
+  color: var(--couleur-quaternaire);
+  transform: translateY(-3px);
+}
+
+.backToLessonButton {
+  background-color: var(--couleur-quaternaire);
+  border: 1px solid var(--couleur-principale);
+}
+
+/* Loading and Error */
+.loadingContainer, .errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  text-align: center;
+}
+
+.loadingSpinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(10, 255, 212, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--couleur-secondaire);
+  animation: spin 1s ease-in-out infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.errorMessage {
+  color: #ff4757;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contentContainer {
+    grid-template-columns: 1fr;
+  }
+  
+  .sidebar {
+    margin-bottom: 2rem;
+  }
+  
+  .navigationButtons {
+    flex-direction: column;
+  }
+  
+  .resultActions {
+    flex-direction: column;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+} 
