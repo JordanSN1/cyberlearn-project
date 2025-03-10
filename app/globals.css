@@ -24,8 +24,23 @@ body {
     overflow-x: hidden;
 }
 
+main {
+    padding-top: 80px;
+    /* Hauteur de la navbar */
+    min-height: calc(100vh - 80px);
+    /* Hauteur totale moins la navbar */
+}
+
 @keyframes gradientAnimation {
-    0% { background-position: 0% 0%; }
-    50% { background-position: 100% 100%; }
-    100% { background-position: 0% 0%; }
+    0% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
 }

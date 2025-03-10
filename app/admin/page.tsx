@@ -6,6 +6,8 @@ import { auth } from "../firebase/config";
 import { onAuthStateChanged } from "firebase/auth";
 import AdminLessonsList from "../components/Admin/AdminLessonsList";
 import AdminHeader from "../components/Admin/AdminHeader";
+import UserManagement from "../components/Admin/UserManagement/UserManagement";
+import UserSettings from "../components/Admin/UserSettings/UserSettings";
 import styles from "./admin.module.css";
 
 export default function AdminPage() {
@@ -16,10 +18,7 @@ export default function AdminPage() {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
-      if (user) {
-        // Ici, vous pourriez vérifier si l'utilisateur a des droits d'administrateur
-        // Par exemple, en vérifiant un champ isAdmin dans la collection users
-        // Pour cet exemple, nous supposons que tout utilisateur connecté est admin
+      if (user && user.email === 'jordanturnaco@gmail.com') {
         setIsAdmin(true);
       } else {
         setIsAdmin(false);
@@ -45,7 +44,7 @@ export default function AdminPage() {
       <div className={styles.unauthorizedContainer}>
         <h1>Accès non autorisé</h1>
         <p>Vous devez être administrateur pour accéder à cette page.</p>
-        <button 
+        <button
           className={styles.loginButton}
           onClick={() => router.push("/login")}
         >
@@ -58,22 +57,16 @@ export default function AdminPage() {
   return (
     <div className={styles.adminContainer}>
       <AdminHeader activeTab={activeTab} setActiveTab={setActiveTab} />
-      
+
       <div className={styles.adminContent}>
         {activeTab === "lessons" && (
           <AdminLessonsList />
         )}
         {activeTab === "users" && (
-          <div className={styles.comingSoon}>
-            <h2>Gestion des utilisateurs</h2>
-            <p>Cette fonctionnalité sera disponible prochainement.</p>
-          </div>
+          <UserManagement />
         )}
         {activeTab === "settings" && (
-          <div className={styles.comingSoon}>
-            <h2>Paramètres</h2>
-            <p>Cette fonctionnalité sera disponible prochainement.</p>
-          </div>
+          <UserSettings />
         )}
       </div>
     </div>

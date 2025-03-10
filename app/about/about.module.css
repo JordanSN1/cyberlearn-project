@@ -219,17 +219,18 @@
   .storyContent {
     grid-template-columns: 1fr;
   }
-  
+
   .storyImageContainer {
     order: -1;
     margin-bottom: 2rem;
   }
-  
-  .heroTitle, .sectionTitle {
+
+  .heroTitle,
+  .sectionTitle {
     font-size: 1.8rem;
   }
-  
+
   .hero {
     padding: 3rem 1.5rem;
   }
-} 
+}

@@ -1,57 +1,67 @@
 "use client";
 
-import { Code, Network, Users, BookOpen } from 'lucide-react';
+import { Code, Network, Users, BookOpen, Shield, Lock, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import styles from './LessonsSection.module.css';
 import { JSX } from "react";
 
 interface Lesson {
-    category: string;
+    id: string;
     title: string;
     description: string;
     icon: JSX.Element;
+    color: string;
 }
 
 const lessons: Lesson[] = [
     {
-        category: 'Code',
-        title: 'Introduction à la Programmation',
-        description: 'Apprenez les bases de la programmation avec des exercices pratiques et des projets réels.',
-        icon: <Code />,
+        id: 'securite-base',
+        title: 'Sécurité de Base',
+        description: 'Apprenez les fondamentaux de la cybersécurité',
+        icon: <Shield size={24} />,
+        color: '#0AFFD4'
     },
     {
-        category: 'Réseaux',
-        title: 'Architecture des Réseaux',
-        description: 'Découvrez comment fonctionnent les réseaux informatiques et l\'infrastructure d\'Internet.',
-        icon: <Network />,
+        id: 'protection-donnees',
+        title: 'Protection des Données',
+        description: 'Protégez vos données personnelles et professionnelles',
+        icon: <Lock size={24} />,
+        color: '#0024FF'
     },
     {
-        category: 'Social',
-        title: 'Impact Social du Numérique',
-        description: 'Explorez l\'influence de la technologie sur la société et les enjeux éthiques.',
-        icon: <Users />,
+        id: 'apprentissage',
+        title: 'Apprentissage',
+        description: 'Découvrez les meilleures pratiques de sécurité',
+        icon: <BookOpen size={24} />,
+        color: '#FF6B6B'
     },
     {
-        category: 'Ressources',
-        title: 'Bibliothèque Numérique',
-        description: 'Accédez à une collection complète de ressources pédagogiques et tutoriels.',
-        icon: <BookOpen />,
-    },
+        id: 'communaute',
+        title: 'Communauté',
+        description: 'Rejoignez une communauté de passionnés',
+        icon: <Users size={24} />,
+        color: '#4CAF50'
+    }
 ];
 
 const LessonsSection = () => {
     return (
-        <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>
-                Nos Leçons
-            </h2>
+        <section id="section-title" className={styles.section}>
+            <div className={styles.sectionHeader}>
+                <h2 className={styles.sectionTitle}>
+                    Nos Leçons
+                </h2>
+                <p className={styles.sectionDescription}>
+                    Découvrez notre catalogue complet de leçons pour développer vos compétences en cybersécurité.
+                </p>
+            </div>
             <div className={styles.cardContainer}>
                 {lessons.map((lesson, index) => (
                     <div key={index} className={styles.card}>
                         <div className={styles.cardHeader}>
-                            <div className={styles.etiquette}>
+                            <div className={styles.etiquette} style={{ backgroundColor: `${lesson.color}20`, borderColor: lesson.color }}>
                                 {lesson.icon}
-                                {lesson.category}
+                                {lesson.title}
                             </div>
                             <h3 className={styles.cardTitle}>{lesson.title}</h3>
                         </div>
@@ -59,8 +69,12 @@ const LessonsSection = () => {
                             {lesson.description}
                         </p>
                         <div className={styles.cardFooter}>
-                            <Link href="/lecons" className={styles.cardLink}>
-                                Voir plus
+                            <Link
+                                href={`/lessons/`}
+                                className={styles.cardLink}
+                            >
+                                <span>Commencer</span>
+                                <ArrowRight size={16} />
                             </Link>
                         </div>
                     </div>

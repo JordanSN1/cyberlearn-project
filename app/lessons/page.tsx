@@ -23,13 +23,13 @@ export default function LessonsPage() {
                 const lessonsData = await getAllLessons();
                 setLessons(lessonsData);
                 setFilteredLessons(lessonsData);
-                
+
                 // Extraire les catégories uniques
                 const uniqueCategories = Array.from(
                     new Set(lessonsData.map(lesson => lesson.category))
                 );
                 setCategories(uniqueCategories);
-                
+
                 setLoading(false);
             } catch (err) {
                 console.error("Erreur lors du chargement des leçons:", err);
@@ -42,22 +42,14 @@ export default function LessonsPage() {
     }, []);
 
     // Filtrer les leçons par catégorie
-    const filterByCategory = async (category: string) => {
+    const filterByCategory = (category: string) => {
         setActiveCategory(category);
-        setLoading(true);
-        
-        try {
-            if (category === "Tous") {
-                setFilteredLessons(lessons);
-            } else {
-                const filteredData = await getLessonsByCategory(category);
-                setFilteredLessons(filteredData);
-            }
-        } catch (err) {
-            console.error(`Erreur lors du filtrage par catégorie ${category}:`, err);
-            setError(`Impossible de filtrer les leçons par ${category}.`);
-        } finally {
-            setLoading(false);
+
+        if (category === "Tous") {
+            setFilteredLessons(lessons);
+        } else {
+            const filteredData = lessons.filter(lesson => lesson.category === category);
+            setFilteredLessons(filteredData);
         }
     };
 
@@ -71,14 +63,14 @@ export default function LessonsPage() {
             </div>
 
             <div className={styles.filters}>
-                <button 
+                <button
                     className={`${styles.filterButton} ${activeCategory === "Tous" ? styles.active : ""}`}
                     onClick={() => filterByCategory("Tous")}
                 >
                     Tous
                 </button>
                 {categories.map((category) => (
-                    <button 
+                    <button
                         key={category}
                         className={`${styles.filterButton} ${activeCategory === category ? styles.active : ""}`}
                         onClick={() => filterByCategory(category)}
@@ -96,7 +88,7 @@ export default function LessonsPage() {
             ) : error ? (
                 <div className={styles.errorContainer}>
                     <p className={styles.errorMessage}>{error}</p>
-                    <button 
+                    <button
                         className={styles.retryButton}
                         onClick={() => filterByCategory(activeCategory)}
                     >

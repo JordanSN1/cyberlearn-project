@@ -16,31 +16,45 @@ interface TeamMember {
 const teamMembers: TeamMember[] = [
   {
     id: 1,
-    name: "Sophie Martin",
-    role: "Fondatrice & Experte en Cybersécurité",
-    bio: "Avec plus de 15 ans d'expérience dans le domaine de la cybersécurité, Sophie a travaillé pour des entreprises de premier plan avant de fonder CyberLearn.",
+    name: "TURNACO Jordan",
+    role: "Developper Full Stack web site et database",
+    bio: "Deuxieme année a l'ecole EPSI Paris Courbevoie",
     image: "/Images/team/team1.jpg",
   },
   {
     id: 2,
-    name: "Thomas Dubois",
-    role: "Responsable Pédagogique",
-    bio: "Ancien professeur d'informatique, Thomas conçoit des programmes éducatifs qui rendent la cybersécurité accessible à tous les niveaux.",
+    name: "LACHGAR Ilyas",
+    role: "Developper Full Stack mobile",
+    bio: "Deuxieme année a l'ecole EPSI Paris Courbevoie",
     image: "/Images/team/team2.jpg",
   },
   {
     id: 3,
-    name: "Léa Chen",
-    role: "Développeuse & Formatrice",
-    bio: "Spécialiste du développement sécurisé, Léa partage son expertise à travers des cours pratiques et des ateliers interactifs.",
+    name: "STORCK Kyllian",
+    role: "Developper Full Stack et createur de contenu",
+    bio: "Master 2 en cybersécurité a l'ecole EPSI Paris Courbevoie",
     image: "/Images/team/team3.jpg",
   },
   {
     id: 4,
-    name: "Marc Leroy",
-    role: "Expert en Sécurité des Réseaux",
-    bio: "Marc possède une expertise approfondie dans la protection des infrastructures réseau et les technologies de sécurité avancées.",
+    name: "MOULERGUES Rémi",
+    role: "Developper Full Stack et createur de contenu",
+    bio: "Master 2 en cybersécurité a l'ecole EPSI Paris Courbevoie",
     image: "/Images/team/team4.jpg",
+  },
+  {
+    id: 5,
+    name: "BOUCHER Hugo",
+    role: "Developper Full Stack et createur de contenu",
+    bio: "Master 2 en cybersécurité a l'ecole EPSI Paris Courbevoie",
+    image: "/Images/team/team5.jpg",
+  },
+  {
+    id: 6,
+    name: "NAHA Pierre gris",
+    role: "UX/UI designer",
+    bio: "Master 2 en disign a l'ecole WIS Paris Courbevoie",
+    image: "/Images/team/team6.jpg",
   },
 ];
 
@@ -51,8 +65,8 @@ export default function AboutPage() {
         <div className={styles.heroContent}>
           <h1 className={styles.heroTitle}>Notre Mission</h1>
           <p className={styles.heroText}>
-            CyberLearn a été fondé avec une vision claire : rendre l'éducation en cybersécurité accessible à tous. 
-            Dans un monde de plus en plus connecté, nous croyons que la connaissance des principes de sécurité 
+            CyberLearn a été fondé avec une vision claire : rendre l'éducation en cybersécurité accessible à tous.
+            Dans un monde de plus en plus connecté, nous croyons que la connaissance des principes de sécurité
             informatique est essentielle pour chaque individu et organisation.
           </p>
         </div>
@@ -68,7 +82,7 @@ export default function AboutPage() {
               Nous nous engageons à protéger les individus et les organisations en partageant les connaissances essentielles en cybersécurité.
             </p>
           </div>
-          
+
           <div className={styles.valueCard}>
             <Award className={styles.valueIcon} />
             <h3 className={styles.valueTitle}>Excellence</h3>
@@ -76,7 +90,7 @@ export default function AboutPage() {
               Nous visons l'excellence dans tous nos contenus éducatifs, en nous assurant qu'ils sont à jour et pertinents.
             </p>
           </div>
-          
+
           <div className={styles.valueCard}>
             <Users className={styles.valueIcon} />
             <h3 className={styles.valueTitle}>Communauté</h3>
@@ -84,7 +98,7 @@ export default function AboutPage() {
               Nous croyons en la force de la communauté et encourageons le partage des connaissances entre apprenants.
             </p>
           </div>
-          
+
           <div className={styles.valueCard}>
             <BookOpen className={styles.valueIcon} />
             <h3 className={styles.valueTitle}>Éducation</h3>
@@ -100,15 +114,15 @@ export default function AboutPage() {
         <div className={styles.storyContent}>
           <div className={styles.storyText}>
             <p>
-              CyberLearn a été fondé en 2020 par Sophie Martin, une experte en cybersécurité passionnée par l'éducation. 
-              Face à l'augmentation des cybermenaces et au manque de ressources éducatives accessibles, 
-              Sophie a décidé de créer une plateforme qui rendrait l'apprentissage de la cybersécurité 
+              CyberLearn a été fondé en 2020 par Sophie Martin, une experte en cybersécurité passionnée par l'éducation.
+              Face à l'augmentation des cybermenaces et au manque de ressources éducatives accessibles,
+              Sophie a décidé de créer une plateforme qui rendrait l'apprentissage de la cybersécurité
               accessible à tous, des débutants aux professionnels.
             </p>
             <p>
-              Au fil des années, CyberLearn s'est développé pour devenir une référence dans le domaine de 
-              l'éducation en cybersécurité, avec une communauté grandissante d'apprenants et d'experts. 
-              Notre équipe s'est agrandie, mais notre mission reste la même : démocratiser l'accès aux 
+              Au fil des années, CyberLearn s'est développé pour devenir une référence dans le domaine de
+              l'éducation en cybersécurité, avec une communauté grandissante d'apprenants et d'experts.
+              Notre équipe s'est agrandie, mais notre mission reste la même : démocratiser l'accès aux
               connaissances en cybersécurité pour un monde numérique plus sûr.
             </p>
           </div>

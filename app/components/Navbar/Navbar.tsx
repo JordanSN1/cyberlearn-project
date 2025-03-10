@@ -2,20 +2,32 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
 import logo from "@/public/Images/White_log.png";
 import AuthButton from "@/app/components/Navbar/AuthButton";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const isScrolled = window.scrollY > 20;
+            setScrolled(isScrolled);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
     return (
-        <nav className={styles.navbar}>
+        <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
             {/* Logo */}
             <div className={styles.logoContainer}>
                 <Link href="/">
@@ -32,16 +44,18 @@ const Navbar = () => {
             </div>
 
             {/* Menu Burger (Mobile) */}
-            <button className={styles.burgerMenu} onClick={toggleMenu}>
-                <div className={styles.burgerLine}></div>
-                <div className={styles.burgerLine}></div>
-                <div className={styles.burgerLine}></div>
+            <button
+                className={styles.burgerMenu}
+                onClick={toggleMenu}
+                aria-label="Menu"
+            >
+                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
 
             {/* Liens et Menu Utilisateur */}
             <div className={`${styles.navLinks} ${isMenuOpen ? styles.open : ""}`}>
                 <Link href="/lessons" className={styles.link}>
-                    Lessons
+                    Leçons
                 </Link>
                 <Link href="/Partners" className={styles.link}>
                     Partenaires
@@ -50,11 +64,13 @@ const Navbar = () => {
                     Contact
                 </Link>
                 <Link href="/about" className={styles.link}>
-                    About
+                    À propos
                 </Link>
 
                 {/* Composant dynamique pour la connexion */}
-                <AuthButton />
+                <div className={styles.authContainer}>
+                    <AuthButton />
+                </div>
             </div>
         </nav>
     );
